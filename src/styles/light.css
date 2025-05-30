@@ -21,12 +21,8 @@
   --background-img: url(../images/cover-image-light.png);
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-
-  .record {
-    display: none;
-  }
+.theme-light .record {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
