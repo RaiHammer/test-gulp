@@ -20,7 +20,7 @@ function html() {
 }
 
 function css() {
-  return gulp.src('src/**/*.css')
+  return gulp.src('src/styles/**/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
 				.pipe(gulp.dest('dist/'))
