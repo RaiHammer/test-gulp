@@ -26,5 +26,8 @@
     "gulp-plumber": "^1.2.1",
     "prettier": "^2.8.8",
     "stylelint": "^15.4.0"
+  },
+  "rules": {
+    "no-descending-specificity": null
   }
 }
