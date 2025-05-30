@@ -4,6 +4,7 @@ const plumber = require('gulp-plumber');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer'); 
 
 function serve() {
   browserSync.init({
@@ -21,7 +22,9 @@ function html() {
 }
 
 function css() {
-    const plugins = []
+    const plugins = [
+      autoprefixer()
+    ]
   return gulp.src('src/styles/**/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
