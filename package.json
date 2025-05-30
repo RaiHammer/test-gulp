@@ -19,15 +19,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "browser-sync": "^2.29.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "postcss": "^8.5.4",
     "prettier": "^2.8.8",
     "stylelint": "^15.4.0"
   },
   "rules": {
     "no-descending-specificity": null
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

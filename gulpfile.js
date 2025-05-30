@@ -3,6 +3,7 @@ const concat = require('gulp-concat-css');
 const plumber = require('gulp-plumber');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const postcss = require('gulp-postcss');
 
 function serve() {
   browserSync.init({
@@ -20,12 +21,14 @@ function html() {
 }
 
 function css() {
+    const plugins = []
   return gulp.src('src/styles/**/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
-				.pipe(gulp.dest('dist/'))
+        .pipe(postcss(plugins))
+                .pipe(gulp.dest('dist/'))
         .pipe(browserSync.reload({stream: true}));
-}
+} 
 
 function js() {
   return gulp.src('src/scripts/**/*.js')
@@ -53,7 +56,7 @@ function clean() {
 
 function watchFiles() {
   gulp.watch(['src/**/*.html'], html);
-  gulp.watch(['src/blocks/**/*.css'], css);
+  gulp.watch(['src/styles/**/*.css'], css);
   gulp.watch(['src/scripts/**/*.js'], js);
   gulp.watch(['src/fonts/**/*.{woff,woff2,ttf,eot,svg}'], fonts);
   gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
